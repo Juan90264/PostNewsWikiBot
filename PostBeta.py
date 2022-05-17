@@ -232,125 +232,125 @@ import emoji
 MensagemConfira = emoji.emojize(':backhand_index_pointing_up:') + emoji.emojize(':backhand_index_pointing_up:') + "*Confira as notícias do dia " + date + " no Wikinotícias*" + emoji.emojize(':backhand_index_pointing_up:') + emoji.emojize(':backhand_index_pointing_up:')
 
 #bot.reply_to(-720890200, "Oi, funcionando! https://pt.wikinews.org/?curid=78380")
-#if 'messagem' in globals():
-#    bot.send_message(-1001321037917, messagem)
-#    time.sleep(2)
+if 'messagem' in globals():
+    bot.send_message(-1001321037917, messagem)
+    time.sleep(2)
         
-#if 'messagem2' in globals():
-#    bot.send_message(-1001321037917, messagem2)
-#    time.sleep(2)
+if 'messagem2' in globals():
+    bot.send_message(-1001321037917, messagem2)
+    time.sleep(2)
             
-#if 'messagem3' in globals():
-#    bot.send_message(-1001321037917, messagem3)
-#    time.sleep(2)
+if 'messagem3' in globals():
+    bot.send_message(-1001321037917, messagem3)
+    time.sleep(2)
             
-#if 'messagem4' in globals():
-#    bot.send_message(-1001321037917, messagem4)
-#    time.sleep(2)
+if 'messagem4' in globals():
+    bot.send_message(-1001321037917, messagem4)
+    time.sleep(2)
                 
-#if 'messagem5' in globals():
-#    bot.send_message(-1001321037917, messagem5)
-#    time.sleep(2)
+if 'messagem5' in globals():
+    bot.send_message(-1001321037917, messagem5)
+    time.sleep(2)
             
-#if 'messagem6' in globals():
-#    bot.send_message(-1001321037917, messagem6)
-#    time.sleep(2)
+if 'messagem6' in globals():
+    bot.send_message(-1001321037917, messagem6)
+    time.sleep(2)
         
-#if 'messagem7' in globals():
-#    bot.send_message(-1001321037917, messagem7)
-#    time.sleep(2)
+if 'messagem7' in globals():
+    bot.send_message(-1001321037917, messagem7)
+    time.sleep(2)
             
-#if 'messagem8' in globals():
-#    bot.send_message(-1001321037917, messagem8)
-#    time.sleep(2)
+if 'messagem8' in globals():
+    bot.send_message(-1001321037917, messagem8)
+    time.sleep(2)
             
-#if 'messagem9' in globals():
-#    bot.send_message(-1001321037917, messagem9)
-#    time.sleep(2)
+if 'messagem9' in globals():
+    bot.send_message(-1001321037917, messagem9)
+    time.sleep(2)
         
-#if 'messagem10' in globals():
-#    bot.send_message(-1001321037917, messagem10)
-#    time.sleep(2)
+if 'messagem10' in globals():
+    bot.send_message(-1001321037917, messagem10)
+    time.sleep(2)
             
-#if 'messagem11' in globals():
-#    bot.send_message(-1001321037917, messagem11)
-#    time.sleep(2)
+if 'messagem11' in globals():
+    bot.send_message(-1001321037917, messagem11)
+    time.sleep(2)
             
-#if 'messagem12' in globals():
-#    bot.send_message(-1001321037917, messagem12)
-#    time.sleep(2)
+if 'messagem12' in globals():
+    bot.send_message(-1001321037917, messagem12)
+    time.sleep(2)
             
-#if 'messagem13' in globals():
-#    bot.send_message(-1001321037917, messagem13)
-#    time.sleep(2)
+if 'messagem13' in globals():
+    bot.send_message(-1001321037917, messagem13)
+    time.sleep(2)
         
-#if 'messagem14' in globals():
-#    bot.send_message(-1001321037917, messagem14)
-#    time.sleep(2)
+if 'messagem14' in globals():
+    bot.send_message(-1001321037917, messagem14)
+    time.sleep(2)
             
-#if 'messagem15' in globals():
-#    bot.send_message(-1001321037917, messagem15)
-#    time.sleep(2)
+if 'messagem15' in globals():
+    bot.send_message(-1001321037917, messagem15)
+    time.sleep(2)
             
-#if 'messagem16' in globals():
-#    bot.send_message(-1001321037917, messagem16)
-#    time.sleep(2)
+if 'messagem16' in globals():
+    bot.send_message(-1001321037917, messagem16)
+    time.sleep(2)
             
-#if 'messagem17' in globals():
-#    bot.send_message(-1001321037917, messagem17) 
-#    time.sleep(2)
+if 'messagem17' in globals():
+    bot.send_message(-1001321037917, messagem17) 
+    time.sleep(2)
         
-#if 'messagem18' in globals():
-#    bot.send_message(-1001321037917, messagem18)
-#    time.sleep(2)
+if 'messagem18' in globals():
+    bot.send_message(-1001321037917, messagem18)
+    time.sleep(2)
         
-#if 'messagem19' in globals():
-#    bot.send_message(-1001321037917, messagem19)
-#    time.sleep(2)
+if 'messagem19' in globals():
+    bot.send_message(-1001321037917, messagem19)
+    time.sleep(2)
             
-#if 'messagem20' in globals():
-#    bot.send_message(-1001321037917, messagem20)
-#    time.sleep(2)
+if 'messagem20' in globals():
+    bot.send_message(-1001321037917, messagem20)
+    time.sleep(2)
 
-#if 'messagem21' in globals():
-#    bot.send_message(-1001321037917, messagem21)
-#    time.sleep(2)
+if 'messagem21' in globals():
+    bot.send_message(-1001321037917, messagem21)
+    time.sleep(2)
             
-#if 'messagem22' in globals():
-#    bot.send_message(-1001321037917, messagem22)
-#    time.sleep(2)
+if 'messagem22' in globals():
+    bot.send_message(-1001321037917, messagem22)
+    time.sleep(2)
             
-#if 'messagem23' in globals():
-#    bot.send_message(-1001321037917, messagem23)
-#    time.sleep(2)
+if 'messagem23' in globals():
+    bot.send_message(-1001321037917, messagem23)
+    time.sleep(2)
             
-#if 'messagem24' in globals():
-#    bot.send_message(-1001321037917, messagem24)
-#    time.sleep(2)
+if 'messagem24' in globals():
+    bot.send_message(-1001321037917, messagem24)
+    time.sleep(2)
         
-#if 'messagem25' in globals():
-#    bot.send_message(-1001321037917, messagem25)
-#    time.sleep(2)
+if 'messagem25' in globals():
+    bot.send_message(-1001321037917, messagem25)
+    time.sleep(2)
             
-#if 'messagem26' in globals():
-#    bot.send_message(-1001321037917, messagem26)
-#    time.sleep(2)
+if 'messagem26' in globals():
+    bot.send_message(-1001321037917, messagem26)
+    time.sleep(2)
             
-#if 'messagem27' in globals():
-#    bot.send_message(-1001321037917, messagem27)
-#    time.sleep(2)
+if 'messagem27' in globals():
+    bot.send_message(-1001321037917, messagem27)
+    time.sleep(2)
             
-#if 'messagem28' in globals():
-#    bot.send_message(-1001321037917, messagem28) 
-#    time.sleep(2)
+if 'messagem28' in globals():
+    bot.send_message(-1001321037917, messagem28) 
+    time.sleep(2)
         
-#if 'messagem29' in globals():
-#    bot.send_message(-1001321037917, messagem29)
-#    time.sleep(2)
+if 'messagem29' in globals():
+    bot.send_message(-1001321037917, messagem29)
+    time.sleep(2)
         
-#if 'messagem30' in globals():
-#    bot.send_message(-1001321037917, messagem30)
-#    time.sleep(2)
+if 'messagem30' in globals():
+    bot.send_message(-1001321037917, messagem30)
+    time.sleep(2)
         
 bot.send_message(-1001321037917, MensagemConfira, parse_mode= "Markdown")
 print("Enviado mensagens compartilhando as notícias do Wikinotícias")
