@@ -5,7 +5,7 @@
 import telebot
 import time 
 
-CHAVE_API = "5297947770:AAGeMzt6z8KcN2lJGPupQj98hYtroW_POCc"
+CHAVE_API = "TOKEN"
 
 bot = telebot.TeleBot(CHAVE_API)
 
