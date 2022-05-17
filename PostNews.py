@@ -1,3 +1,7 @@
+###########################################################
+### Teste do Bot, esse não é o arquivo para executar-lo ###
+### Esse arquivo foi um teste do bot                    ###
+###########################################################
 import telebot
 import time 
 
