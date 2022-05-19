@@ -26,15 +26,23 @@ date = '%s de %s de %s' % (dia, mes_ext[int(mes)], ano)
 def teste(message):
         bot.send_message(-1001321037917, "Olá, me encontro funcionando corretamente!")
         print("Enviando messagem de teste")
+        exit()
 
 
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://pt.wikinews.org/wiki/Utilizador:Juan90264/Telebot' #+ date.replace(" ", "_")
+### Código somente para purgar o cache da página
+url = 'https://pt.wikinews.org/w/api.php?action=purge&format=none&errorformat=bc&titles=Utilizador%3AJuan90264%2FTelebot' #+ date.replace(" ", "_")
 
 headers = {
             'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.79"}
+site = requests.get(url, headers=headers)
+soup = BeautifulSoup(site.content, 'html.parser')
+
+#### Código para fazer o Web Scraping
+url = 'https://pt.wikinews.org/wiki/Utilizador:Juan90264/Telebot' #+ date.replace(" ", "_")
+
 site = requests.get(url, headers=headers)
 soup = BeautifulSoup(site.content, 'html.parser')
 placas = soup.find_all('div', class_='mw-parser-output')
@@ -52,6 +60,21 @@ if int(paginas) >= 1:
     marca = placa.find_all('a')[0]
     marca_1 = marca.get('href')
     messagem = "https://pt.wikinews.org" + marca_1.replace(" ", "_")
+else:
+    print("Não foi possível enviar as mensagens compartilhando as notícias.")
+    time.sleep(15)
+        try:
+            nome_arquivo = "RelatórioErro" + date + ".txt"
+            arquivo = open(nome_arquivo, 'r+')
+            arquivo.write(u'\nNão foi possível enviar as mensagens compartilhando as notícias. Por favor, cheque esse erro, talvez não tenha notícia criada hoje, ou outro problema.')
+            arquivo.close()
+            exit()
+        except FileNotFoundError:
+            arquivo = open(nome_arquivo, 'w+')
+            arquivo.write(u'Não foi possível enviar as mensagens compartilhando as notícias. Por favor, cheque esse erro, talvez não tenha notícia criada hoje, ou outro problema.\n /Arquivo criado pois nao existia/')
+            #faca o que quiser
+            arquivo.close()
+            exit()
 
 if int(paginas) >= 2:
     placa2 = placas[0]
@@ -170,25 +193,25 @@ if int(paginas) >= 20:
 if int(paginas) >= 21:
     placa21 = placas[0]
     marca21 = placa.find_all('a')[20]
-    marca_21 = marca10.get('href')
+    marca_21 = marca21.get('href')
     messagem21 = "https://pt.wikinews.org" + marca_21.replace(" ", "_")
 
 if int(paginas) >= 22:
     placa22 = placas[0]
     marca22 = placa.find_all('a')[21]
-    marca_22 = marca11.get('href')
+    marca_22 = marca22.get('href')
     messagem22 = "https://pt.wikinews.org" + marca_22.replace(" ", "_")
 
 if int(paginas) >= 23:
     placa23 = placas[0]
     marca23 = placa.find_all('a')[22]
-    marca_23 = marca12.get('href')
+    marca_23 = marca23.get('href')
     messagem23 = "https://pt.wikinews.org" + marca_23.replace(" ", "_")
 
 if int(paginas) >= 24:
     placa24 = placas[0]
     marca24 = placa.find_all('a')[23]
-    marca_24 = marca13.get('href')
+    marca_24 = marca24.get('href')
     messagem24 = "https://pt.wikinews.org" + marca_24.replace(" ", "_")
 
 if int(paginas) >= 25:
@@ -310,7 +333,7 @@ if 'messagem19' in globals():
             
 if 'messagem20' in globals():
     bot.send_message(-1001321037917, messagem20)
-    time.sleep(2)
+    time.sleep(12)
 
 if 'messagem21' in globals():
     bot.send_message(-1001321037917, messagem21)
