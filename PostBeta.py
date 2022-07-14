@@ -32,17 +32,48 @@ def teste(message):
 import requests
 from bs4 import BeautifulSoup
 
-### Código somente para purgar o cache da página
-url = 'https://pt.wikinews.org/w/api.php?action=purge&format=none&errorformat=bc&titles=Utilizador%3AJuan90264%2FTelebot' #+ date.replace(" ", "_")
+#### Purgador de cache da página do Web Scraping
+import json
+import requests
 
-headers = {
-            'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.79"}
-site = requests.get(url, headers=headers)
-soup = BeautifulSoup(site.content, 'html.parser')
+S = requests.Session()
+
+url_dados = "https://pt.wikinews.org/w/api.php"
+
+PARAMS = { ## Parâmetro para url da API na variável url_dados
+    "action": "purge",
+    "format": "json",
+    "titles": "Usuário:Juan90264/Telebot"
+}
+
+R = S.post(url=url_dados, params=PARAMS)
+DATA = R.text
+##print(DATA)
+
+f = open('/FotosDoDia/PostBeta.json','wt')
+response = str(DATA)
+f.write(response)
+f.close()
+print("Json baixado com sucesso")
+
+with open('/FotosDoDia/PostBeta.json', "r", encoding='utf-8') as archive:
+    dados = json.load(archive)
+
+##print(dados)
+dadosJSON = str(dados["purge"][0]["purged"])
+dados2 = dados["purge"][0]["purged"]
+
+##print(dados["purge"][0])
+if dados2 == "":
+    print("Página purgada com sucesso")
+else:
+    print("Houve um erro ao purgar a página")
 
 #### Código para fazer o Web Scraping
 url = 'https://pt.wikinews.org/wiki/Utilizador:Juan90264/Telebot' #+ date.replace(" ", "_")
 
+headers = {
+            'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.79"}
 site = requests.get(url, headers=headers)
 soup = BeautifulSoup(site.content, 'html.parser')
 placas = soup.find_all('div', class_='mw-parser-output')
@@ -62,19 +93,19 @@ if int(paginas) >= 1:
     messagem = "https://pt.wikinews.org" + marca_1.replace(" ", "_")
 else:
     print("Não foi possível enviar as mensagens compartilhando as notícias.")
-    time.sleep(15)
-        try:
-            nome_arquivo = "RelatórioErro" + date + ".txt"
-            arquivo = open(nome_arquivo, 'r+')
-            arquivo.write(u'\nNão foi possível enviar as mensagens compartilhando as notícias. Por favor, cheque esse erro, talvez não tenha notícia criada hoje, ou outro problema.')
-            arquivo.close()
-            exit()
-        except FileNotFoundError:
-            arquivo = open(nome_arquivo, 'w+')
-            arquivo.write(u'Não foi possível enviar as mensagens compartilhando as notícias. Por favor, cheque esse erro, talvez não tenha notícia criada hoje, ou outro problema.\n /Arquivo criado pois nao existia/')
-            #faca o que quiser
-            arquivo.close()
-            exit()
+    time.sleep(5)
+    try:
+        nome_arquivo = "RelatórioErro" + date + ".txt"
+        arquivo = open(nome_arquivo, 'r+')
+        arquivo.write(u'\nNão foi possível enviar as mensagens compartilhando as notícias. Por favor, cheque esse erro, talvez não tenha notícia criada hoje, ou outro problema.')
+        arquivo.close()
+        exit()
+    except FileNotFoundError:
+        arquivo = open(nome_arquivo, 'w+')
+        arquivo.write(u'Não foi possível enviar as mensagens compartilhando as notícias. Por favor, cheque esse erro, talvez não tenha notícia criada hoje, ou outro problema.\n /Arquivo criado pois nao existia/')
+        #faca o que quiser
+        arquivo.close()
+        exit()
 
 if int(paginas) >= 2:
     placa2 = placas[0]
