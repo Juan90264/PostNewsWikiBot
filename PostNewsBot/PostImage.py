@@ -1,7 +1,7 @@
 import telebot
 import time 
 
-CHAVE_API = "TOKEN"
+CHAVE_API = "5297947770:AAGeMzt6z8KcN2lJGPupQj98hYtroW_POCc"
 
 bot = telebot.TeleBot(CHAVE_API)
 
@@ -76,13 +76,13 @@ import urllib.request, json, requests
 import re
 
 url_dados = "https://pt.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=extmetadata&titles=" + nomeArquivo
-f = open('/FotosDoDia/' + date + '.json','wb')
+f = open('C:/Users/User/Documents/FotosDoDia/' + date + '.json','wb')
 response = requests.get(url_dados)
 f.write(response.content)
 f.close()
 print("Json baixado com sucesso")
 
-with open('/FotosDoDia/' + date + '.json', "r", encoding='utf-8') as archive:
+with open('C:/Users/User/Documents/FotosDoDia/' + date + '.json', "r", encoding='utf-8') as archive:
     dados = json.load(archive)
 
 dadosJSON = str(dados["query"]["pages"]["-1"]["imageinfo"])
@@ -116,6 +116,7 @@ dateFoto = re.sub('<.+?>[^>]+?<*?>', '', dateFoto)
 diaFoto = dateFoto[8:]
 mesFoto = dateFoto[5:-3]
 anoFoto = dateFoto[0:-6]
+print(dateFoto)
 
 if not diaFoto and not mesFoto:
     anoFoto = dateFoto[:]
@@ -135,15 +136,16 @@ else:
         else:
             if len(dateFoto) > 10: #Checa a quantidade de caracteres para caso tenha hora na data
                 diaFoto = dateFoto[8:-9]
-                mesFoto = dateFoto[5:-13] #2022-09-20 21:39:30
+                mesFoto = dateFoto[5:-12] #2022-09-20 21:39:30
                 anoFoto = dateFoto[0:-15]
+                ##print(dateFoto)
                 mesNomes = {1: 'janeiro', 2 : 'fevereiro', 3: 'março', 4: 'abril', 5: 'maio', 6: 'junho', 7: 'julho', 8: 'agosto', 9: 'setembro', 10: 'outubro', 11: 'novembro', 12: 'dezembro'}
-                dateFormatado = '%s de %s de %s' % (int(dia), mesNomes[int(mesFoto)], anoFoto)
+                dateFormatado = '%s de %s de %s' % (int(diaFoto), mesNomes[int(mesFoto)], anoFoto)
             else:
                 mesNomes = {1: 'janeiro', 2 : 'fevereiro', 3: 'março', 4: 'abril', 5: 'maio', 6: 'junho', 7: 'julho', 8: 'agosto', 9: 'setembro', 10: 'outubro', 11: 'novembro', 12: 'dezembro'}
-                dateFormatado = '%s de %s de %s' % (int(dia), mesNomes[int(mesFoto)], anoFoto)
+                dateFormatado = '%s de %s de %s' % (int(diaFoto), mesNomes[int(mesFoto)], anoFoto)
 
-#print(author, dateFormatado)
+print(author, dateFormatado)
 
 #### Parâmetros da legenda da foto
 autor = author
@@ -158,15 +160,15 @@ dia2, mes2, ano2 = dataOntemStr.split("/")
 dataOntem = '%s de %s de %s' % (int(dia2), mes_ext[int(mes2)], ano2)
 
 import os
-os.remove('/FotosDoDia/' + dataOntem + '.png')
-os.remove('/FotosDoDia/' + dataOntem + '.json')
+os.remove('C:/Users/User/Documents/FotosDoDia/' + dataOntem + '.png')
+os.remove('C:/Users/User/Documents/FotosDoDia/' + dataOntem + '.json')
 print("Arquivos de ontem apagados com sucesso")
 
 #print(dataOntem)
 
 LegendaFoto = "<b>Imagem do dia em " + date + ": </b>" + messagem + "\nSaiba mais: " + url + "\nAutor: " + autor + "\nData: " + dataFoto + "\nLicença: " + LicenseFoto
 
-photo = open('/FotosDoDia/' + date + '.png', 'rb')
+photo = open('C:/Users/User/Documents/FotosDoDia/' + date + '.png', 'rb')
 bot.send_photo(-1001569914422, photo, LegendaFoto, parse_mode="HTML")
 print("Foto do dia " + date + " enviada com sucesso!")
 time.sleep(15)
